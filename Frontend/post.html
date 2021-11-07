@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Inventario de Pizzas</title>
+</head>
+<!-- Al iniciar el body debemos colocar el método para que cargue al entrar a la página -->
+<body onload="cargar3(); getpost()">
+    
+    <!-- Barra de Navegación -->
+    <nav class="nav" style="background-color: #e3f2fd;">
+        <a class="nav-link" ><h4>Post</h4></a>
+        <a class="nav-link" ><h4><button type="button" class="btn btn-secondary" onclick= "window.history.back ()" >Regresar</button></h4></a>
+        
+    </nav>
+    <br><br>
+
+    <!-- Colocar un DIV para identificar la parte de la página a la que queremos editar con los datos dinámicos -->
+    <!-- Identificarla con un ID -->
+    <div id="post">
+        <div style="height: 100%;">           
+            <div class = "d-flex align-items-center justify-content-md-center" style="height: 93vh;" >
+                <div id = "editar" class = "card" style = " width: 40vw;">
+                    <div class="card-body">                                               
+                        <div class="input-group mb-3">
+                            <table id = "mostrarpost" class="table table-bordered" style = "display: none; width: 60vw;">                                        
+                                <thead>
+                                    <tr>
+                                        <th scope="col"> </th>
+                                    </tr>
+                                </thead>
+                                <tbody id = "tbody5">
+                                    <div id ="pos"class="input-group mb-3 code-view-lines">
+                                       
+                                    </div>
+                                </tbody> 
+                            </table> 
+                        </div>                                              
+                        <div class="input-group mb-3">
+                            <a href="#" class="btn btn-primary btn-icon-split">
+                                <span >
+                                    <button type="button" class="btn btn-primary btn-icon-split" onclick= "window.history.back ()" >
+                                        <img src="https://quierolike.com/wp-content/uploads/2020/01/46854.jpg" width="40" height="40"/>
+                                    </button>
+                                </span>
+                                <span class="text">                                    
+                                        <input disabled id = "likes-editar" type="text" class="btn btn-primary btn-icon-split" placeholder="likes" aria-label="likes" aria-describedby="basic-addon1">                                   
+                                </span>
+                            </a>                            
+                            <input disabled id = "author-editar" type="text" class="form-control" placeholder="author" aria-label="author" aria-describedby="basic-addon1">
+                            <input disabled id = "date-editar" type="text" class="form-control" placeholder="date" aria-label="date" aria-describedby="basic-addon1">
+                        </div> 
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>
+    <script src = "./js/index.js"></script>
+</body>
+</html>

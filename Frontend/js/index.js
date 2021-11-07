@@ -589,5 +589,37 @@ async function image(tip) {
     </video> `;           
     }           
 }
-
- 
+async function getpost(){  
+    var card = document.querySelector('post')
+    //Guardar en una variable todo el texto (en formato html) que querramos retornar y agregar a la página
+    var cadena = "";
+    
+    //Fetch ----> https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch
+    fetch("http://localhost:4000/devolver_Posts", {
+        method: "GET",
+            headers:{
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',}})
+            .then(res => res.json())
+            .catch(err => {
+                console.error('Error:', err)
+                alert("Ocurrio un error, ver la consola")
+            })
+            .then(response =>{
+                response.forEach(element => {
+                    cadena +=  `<div class="card" style="width: 18rem;">
+                                <img src="https://babycocina.com/wp-content/uploads/2021/03/pizzas-italianas.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                <h5 class="card-title">Pizza #${element.id}</h5>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Especialidad: ${element.id}</li>
+                                </ul>
+                                <div class="card-body">
+                                    <button onclick="deletePizza(${element.id})" type="button" class="btn btn-outline-dark">Eliminar</button>
+                                </div>
+                                </div><br><br>`
+                });
+    card.innerHTML = cadena
+    })
+}
