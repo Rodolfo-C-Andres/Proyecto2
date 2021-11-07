@@ -1,0 +1,48 @@
+<!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        
+        <title>Editar Usuario</title>
+    </head>
+    <body style = "background-color: rgb(124, 116, 116)" onload="cargar();" >
+        <div style="height: 100%;">
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height: 7vh;">
+                <div class="container-fluid">
+                    <div class="mx-auto order-0">
+                        <a class="navbar-brand mx-auto">usuario</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div style="height: 100%;">
+            <div class = "d-flex align-items-center justify-content-md-center" style="height: 93vh;" >
+                <div id = "editar" class = "card" style = " width: 40vw;">
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <input disabled id = "correo-editar"  type="text" class="form-control" placeholder="Correo" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input disabled id = "nombre-editar" type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input disabled id = "password-editar" type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input disabled id = "genero-editar" type="text" class="form-control" placeholder="Genero" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3">
+                            <input disabled id = "nombre_usuario-editar" type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>                        
+                        <button type="button" class="btn btn-secondary" onclick="window.history.back ()" >Regresar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src = "./js/index.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+{
+    "usuarios": [
+        {
+            "email": "1@gmail.com",
+            "password": "1",
+            "name": "1",
+	    "gener": "1",
+            "username": 1
+        },
+        {
+            "email": "2@gmail.com",
+            "password": "2",
+            "name": "2",
+	    "gener": "2",
+            "username": 2
+        },
+        {
+            "email": "3@gmail.com",
+            "password": "3",
+            "name": "3",
+	    "gener": "3",
+            "username": 3
+        },
+        {
+            "email": "4@gmail.com",
+            "password": "4",
+            "name": "4",
+	    "gener": "4",
+            "username": 4
+        },
+        {
+            "email": "5@gmail.com",
+            "password": "5",
+            "name": "5",
+	    "gener": "5",
+            "username": 5
+        },
+        {
+            "email": "6@gmail.com",
+            "password": "6",
+            "name": "6",
+	    "gener": "6",
+            "username": 6
+        }
+    ]
+}
