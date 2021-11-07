@@ -40,7 +40,7 @@ async function crear(){
     let gener = document.getElementById("genero-crear").value
     let username = document.getElementById("nombre_usuario-crear").value
 
-    let peticion = await fetch("http://localhost:4000/usuario", {
+    let peticion = await fetch("http://34.125.204.17:4000/usuario", {
         method: "PUT",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -68,7 +68,7 @@ async function crearpost(){
     let category = document.getElementById("category-crear").value
     let author = document.getElementById("author-crear").value
 
-    let peticion = await fetch("http://localhost:4000/post", {
+    let peticion = await fetch("http://34.125.204.17:4000/post", {
         method: "PUT",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -93,7 +93,7 @@ async function mostrarU() {
      //innerHTML: modifica el contenido que se encuentra como hijo de la etiqueta especificada
     cuerpo.innerHTML = "";
 
-    let peticion = await fetch("http://localhost:4000/devolver_todo", {
+    let peticion = await fetch("http://34.125.204.17:4000/devolver_todo", {
         method: "GET"
     })
     let respuesta = await peticion.json()
@@ -148,7 +148,7 @@ async function mostrarpost() {
      //innerHTML: modifica el contenido que se encuentra como hijo de la etiqueta especificada
     cuerpo.innerHTML = "";
 
-    let peticion = await fetch("http://localhost:4000/devolver_Posts", {
+    let peticion = await fetch("http://34.125.204.17:4000/devolver_Posts", {
         method: "GET"
     })
     let respuesta = await peticion.json()
@@ -207,7 +207,7 @@ async function mostrarpost2() {
      //innerHTML: modifica el contenido que se encuentra como hijo de la etiqueta especificada
     cuerpo.innerHTML = "";
 
-    let peticion = await fetch("http://localhost:4000/devolver_Posts", {
+    let peticion = await fetch("http://34.125.204.17:4000/devolver_Posts", {
         method: "GET"
     })
     let respuesta = await peticion.json()
@@ -265,7 +265,7 @@ async function mostrarpost2() {
 }
 async function eliminar(correo) {
     let email = correo
-    let peticion = await fetch("http://localhost:4000/eliminar", {
+    let peticion = await fetch("http://34.125.204.17:4000/eliminar", {
         method: "DELETE",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -278,7 +278,7 @@ async function eliminar(correo) {
 }
 async function eliminarpost(Id) {
     let id = Id
-    let peticion = await fetch("http://localhost:4000/eliminarpost", {
+    let peticion = await fetch("http://34.125.204.17:4000/eliminarpost", {
         method: "DELETE",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -297,7 +297,7 @@ async function editar() {
     let gener = document.getElementById("genero-editar").value
     let username = document.getElementById("nombre_usuario-editar").value
 
-    let peticion = await fetch("http://localhost:4000/actualizar", {
+    let peticion = await fetch("http://34.125.204.17:4000/actualizar", {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -327,7 +327,7 @@ async function editarpost() {
     let likes = document.getElementById("likes-editar").value
     let author = document.getElementById("author-editar").value
     
-    let peticion = await fetch("http://localhost:4000/actualizarpost", {
+    let peticion = await fetch("http://34.125.204.17:4000/actualizarpost", {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -355,7 +355,7 @@ async function editarpost() {
 }
 async function edituser(correo) {
     let email = correo
-    let peticion = await fetch("http://localhost:4000/buscar_usuario", {
+    let peticion = await fetch("http://34.125.204.17:4000/buscar_usuario", {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -375,7 +375,7 @@ async function edituser(correo) {
 }
 async function editpost(Id) {
     let id = Id
-    let peticion = await fetch("http://localhost:4000/buscar_post", {
+    let peticion = await fetch("http://34.125.204.17:4000/buscar_post", {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -397,7 +397,7 @@ async function editpost(Id) {
 }
 async function veruser(correo) {
     let email = correo
-    let peticion = await fetch("http://localhost:4000/buscar_usuario", {
+    let peticion = await fetch("http://34.125.204.17:4000/buscar_usuario", {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -417,7 +417,7 @@ async function veruser(correo) {
 }
 async function verpost(Id) {
     let id = Id
-    let peticion = await fetch("http://localhost:4000/buscar_post", {
+    let peticion = await fetch("http://34.125.204.17:4000/buscar_post", {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -440,7 +440,7 @@ async function verpost(Id) {
 async function entrar() {
     let email = document.getElementById("correo").value
     let password = document.getElementById("pass").value
-    let peticion = await fetch("http://localhost:4000/Login", {
+    let peticion = await fetch("http://34.125.204.17:4000/Login", {
         method: "POST",
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -485,7 +485,7 @@ async function cargaMasiva(){
     localStorage.setItem("usuarios", JSON.stringify(respuesta.data))
 }
 async function enviarInfo(jsonCM){
-    const rawResponse = await fetch("http://localhost:4000/usuarios/carga-masiva", {
+    const rawResponse = await fetch("http://34.125.204.17:4000/usuarios/carga-masiva", {
         method: "POST",
         body: JSON.stringify({ "usuarios": jsonCM.usuarios }),
         headers: { "Content-Type": "application/json" },
@@ -507,7 +507,7 @@ async function cargaMasivapost(){
     reader.readAsText(archivo, "UTF-8")
 }
 async function enviarInfoposti(jsonCM){
-    const rawResponse = await fetch("http://localhost:4000/post/carga-masivai", {
+    const rawResponse = await fetch("http://34.125.204.17:4000/post/carga-masivai", {
         method: "POST",
         body: JSON.stringify({ "images": jsonCM.images }),
         headers: { "Content-Type": "application/json" },
@@ -517,7 +517,7 @@ async function enviarInfoposti(jsonCM){
     alert(respuesta.mensaje)
 }
 async function enviarInfopostv(jsonCM){
-    const rawResponse = await fetch("http://localhost:4000/post/carga-masivav", {
+    const rawResponse = await fetch("http://34.125.204.17:4000/post/carga-masivav", {
         method: "POST",
         body: JSON.stringify({"videos": jsonCM.videos }),
         headers: { "Content-Type": "application/json" },
@@ -595,7 +595,7 @@ async function getpost(){
     var cadena = "";
     
     //Fetch ----> https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch
-    fetch("http://localhost:4000/devolver_Posts", {
+    fetch("http://34.125.204.17:4000/devolver_Posts", {
         method: "GET",
             headers:{
                 'Content-Type': 'application/json',
