@@ -567,6 +567,13 @@ function cargar5(){
 function cargar6(){
     document.getElementById("author-crear").value = localStorage.getItem("username1")
 }
+function cargar7(){   
+    document.getElementById("correo-editar").value = localStorage.getItem("email1")
+    document.getElementById("password-editar").value = localStorage.getItem("password1")
+    document.getElementById("nombre-editar").value = localStorage.getItem("name1")
+    document.getElementById("genero-editar").value = localStorage.getItem("gener1")
+    document.getElementById("nombre_usuario-editar").value = localStorage.getItem("username1")
+}
 async function image(tip) {
     let cuerpo = document.getElementById("pos")
     let direccion = localStorage.getItem("url")

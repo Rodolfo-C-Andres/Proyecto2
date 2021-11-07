@@ -1,110 +1,384 @@
-<!doctype html>
-    <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<!-- saved from url=(0143)file:///C:/Users/rodol/Documents/U/SS2021/IPC1/Lab/Proyectos/Proyecto2/Frontend/USAC%20Tricentenaria.%20Grande%20entre%20las%20del%20Mundo.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style data-merge-styles="true"></style>
+	
+    <link rel="shortcut icon" href="https://www.usac.edu.gt/img/eusac.png">
+	
+	<title>USAC Tricentenaria. Grande entre las del Mundo</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="p:domain_verify" content="d8b79304a68f4f6a8be551195dfe8cb6">
+	<link rel="stylesheet" href="./index_files/bootstrap.css">
+	<link rel="stylesheet" href="./index_files/hojadeestilos.css">
+	<!-- Start WOWSlider.com HEAD section 
+	<link rel="stylesheet" type="text/css" href="engine1/style.css" />-->
+    
+    <script async="" src="file://www.google-analytics.com/analytics.js"></script><script async="" src="./index_files/analytics.js.descarga"></script><script type="text/javascript" src="./index_files/jquery.js.descarga"></script>
+	<!-- End WOWSlider.com HEAD section -->
+	<link href="./index_files/css" rel="stylesheet">
+    <script>
+    /*    function abrir() {
+            open('imgemergente.html','','top=340vh,left=650vh,width=640px,height=470px,directories=no,       menubar=no,status=no,toolbar=no,location=no,scrollbars=no,fullscreen=no') ;
+        }*/
+    </script>
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
 
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
 
-        <title>Proyecto 2</title>
-    </head>
-    <body style = "background-color: rgb(124, 116, 116)">
-        <div style="height: 100%;">
-            <nav class="navbar navbar-expand-md navbar-dark bg-dark" style="height: 7vh;">
-                <div class="container-fluid">
-                    <div class="mx-auto order-0">
-                        <a class="navbar-brand mx-auto">Usuarios</a>
-                    </div>
-                    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-dark" style = "height: 7vh;" onclick = "mostrar(1)">Crear</button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-dark" style = "height: 7vh;" onclick = "mostrar(2)">Ver</button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-dark" style = "height: 7vh;" onclick = "mostrar(3)" >Modificar</button>
-                            </li>
-                            <li class="nav-item">
-                                <button type="button" class="btn btn-dark" style = "height: 7vh;" onclick = "mostrar(4)" >Eliminar</button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+function existe(elemento){
+        if(document.getElementsByTagName(elemento).length>0){
+            return true;
+        } else {
+            return false;
+        }   
+    }
 
-            <div class = "d-flex align-items-center justify-content-md-center" style="height: 93vh;" >
-                <div id = "crear" class = "card border" style = "display: none; width: 40vw;">
-                    <div class="card-body">                        
-                        <div class="input-group mb-3">
-                            <input id = "correo-crear" type="text" class="form-control" placeholder="Correo" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <input id = "nombre-crear" type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <input id = "password-crear" type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <input id = "genero-crear" type="text" class="form-control" placeholder="Genero" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <input id = "nombre_usuario-crear" type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <button type="button" class="btn btn-secondary" onclick="crear()" >Enviar</button>
-                    </div>
-                </div>
+$(document).ready(function() {
+    /*if($(".banner").length) {
+        alert("si hay banner");
+    } else {
+        alert("no hay banner");
+    }*/
+    var heights = $(".banner").map(function() {
+        return $(this).height();
+    }).get(),
+    maxHeight = Math.max.apply(null, heights);
+    if (existe('frase')){$(".frase").height(maxHeight);}
+    if (existe('actualidadglhyp')){$(".actualidadglhyp").height(maxHeight);}    
+    if (existe('actualidad')){$(".actualidad").height(maxHeight);}
+    //alert(heights);
+    /*$(".actualidadglhyp").height(maxHeight);
+    $(".actualidad").height(maxHeight);
+    $(".frase").height(maxHeight);*/
+/*    var heights = $(".enlinea").map(function() {
+        return $(this).height();
+    }).get(),
+ 
+    maxHeight = Math.max.apply(null, heights);
+ 
+    $(".banner").height(maxHeight);
 
-                <div id = "eliminar" class = "card" style = "display: none; width: 40vw;">
-                    <div class="card-body">
-                        <div class="input-group mb-3">
-                            <input id = "correo-eliminar" type="text" class="form-control" placeholder="Correo" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <button type="button" class="btn btn-secondary" onclick="eliminar()" >Enviar</button>
-                    </div>
-                </div>
+    var heights2 = $(".actualidad").map(function() {
+        return $(this).height();
+    }).get(),
+ 
+    maxHeight2 = Math.max.apply(null, heights2);
+ 
+    $(".actualidadglhyp").height(maxHeight2);
+    $(".amarillo").height(maxHeight2);*/
 
-                <div id = "editar" class = "card" style = "display: none; width: 40vw;">
-                    <div class="card-body">
-                        <div class="input-group mb-3">
-                            <input id = "correo-editar" type="text" class="form-control" placeholder="Correo" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <input id = "nombre-editar" type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <input id = "password-editar" type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <input id = "genero-editar" type="text" class="form-control" placeholder="Genero" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>
-                        <div class="input-group mb-3">
-                            <input id = "nombre_usuario-editar" type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon1">
-                        </div>                        
-                        <button type="button" class="btn btn-secondary" onclick="editar()" >Enviar</button>
-                    </div>
-                </div>
-                
-                <table id = "mostrar" class="table table-striped table-dark" style = "display: none; width: 60vw;">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Id</th>
-                            <th scope="col">Correo</th>
-                            <th scope="col">Contraseña</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Genero</th>
-                            <th scope="col">Nombre de Usuario</th>
-                        </tr>
-                    </thead>
-                    <tbody id = "tbody">
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <script src = "./js/index.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-    </body>
-</html>
+
+
+
+    var heights3 = $(".celeste").map(function() {
+        return $(this).height();
+    }).get(),
+ 
+    maxHeight3 = Math.max.apply(null, heights3);
+ 
+    $(".celeste2").height(maxHeight3);
+
+    var heights4 = $(".gris3").map(function() {
+        return $(this).height();
+    }).get(),
+ 
+    maxHeight4 = Math.max.apply(null, heights4);
+ 
+    $(".gris4").height(maxHeight4);
+
+    var heights4 = $(".gris5").map(function() {
+        return $(this).height();
+    }).get(),
+ 
+    maxHeight4 = Math.max.apply(null, heights4);
+ 
+    $(".gris6").height(maxHeight4);
+
+    var heights4 = $(".gris7").map(function() {
+        return $(this).height();
+    }).get(),
+ 
+    maxHeight4 = Math.max.apply(null, heights4);
+ 
+    $(".gris8").height(maxHeight4);
+
+    var heights4 = $(".gris9").map(function() {
+        return $(this).height();
+    }).get(),
+ 
+    maxHeight4 = Math.max.apply(null, heights4);
+ 
+    $(".gris10").height(maxHeight4);
+
+    var heights4 = $(".gris11").map(function() {
+        return $(this).height();
+    }).get(),
+ 
+    maxHeight4 = Math.max.apply(null, heights4);
+ 
+    $(".gris12").height(maxHeight4);
+
+    var heights4 = $(".gris13").map(function() {
+        return $(this).height();
+    }).get(),
+ 
+    maxHeight4 = Math.max.apply(null, heights4);
+ 
+    $(".gris14").height(maxHeight4);
+
+    var heights4 = $(".gris15").map(function() {
+        return $(this).height();
+    }).get(),
+ 
+    maxHeight4 = Math.max.apply(null, heights4);
+ 
+    $(".gris16").height(maxHeight4);
+
+    var heights4 = $(".gris17").map(function() {
+        return $(this).height();
+    }).get(),
+ 
+    maxHeight4 = Math.max.apply(null, heights4);
+ 
+    $(".gris18").height(maxHeight4);
+
+    /*botones pie*/
+    var heights1 = $(".piemenug").map(function() {
+        return $(this).height();
+        }).get(),
+        height1 = Math.max.apply(null, heights1);
+    var heights2 = $(".piemenua").map(function() {
+            return $(this).height();
+        }).get(),
+        height2 = Math.max.apply(null, heights2);
+    var heights3 = $(".piemenua2").map(function() {
+            return $(this).height();
+        }).get(),
+        height3 = Math.max.apply(null, heights3);
+    var heights4 = $(".piemenua3").map(function() {
+            return $(this).height();
+        }).get(),
+        height4 = Math.max.apply(null, heights4);
+
+    /*alert("gris"+height1+" a1:"+height2+" a2:"+height3+" a3:"+height4);*/
+    if (height1>=height2 && height1>=height3 && height1>=height4){
+            maxHeight = height1;
+    } else {
+        if (height2>=height3 && height2>=height4){
+            maxHeight = height2;
+        } else {
+            if (height3>=height4){
+                maxHeight = height3;
+            } else {
+                maxHeight = height4;
+            }
+        }
+    }
+    /*alert("altura: "+maxHeight);*/
+    $(".piemenug").height(maxHeight);
+    $(".piemenua").height(maxHeight);
+    $(".piemenua2").height(maxHeight);
+    $(".piemenua3").height(maxHeight);
+
+});
+
+//GOOGLE ANALYTICS
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-65668802-1', 'auto');
+  ga('send', 'pageview');
+</script><style type="text/css" media="screen">
+.jos1 {
+    text-align: center;
+}
+.jos2{
+    text-align: justify;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+.jos3{
+    padding: 3vh;
+}
+
+.jos4{
+    text-align: right;
+    font-family: Indie Flower;
+    padding-right: 3vh;
+    color: #FFFFFF;
+}    
+</style></head>
+
+
+
+
+<body onload="MM_preloadImages(&#39;img/boton_facebook_usac_2018b.jpg&#39;, &#39;img/boton_twitter_usac_2018b.jpg&#39;, &#39;img/boton_instagram_usac_2018b.jpg&#39;, &#39;img/boton_youtube_usac_2018b.jpg, img/imagen_radio_usac_2018_b.jpg,img/imagen_tv_usac_2018_b.jpg&#39;), abrir()">
+    <div class="container-fluid">
+        <a name="principal"></a>
+<!--MENU-->
+	<div class="main row">
+		<br>
+		<!--<blanco class="col-xs-0 col-sm-1 col-md-1 col-lg-2 clearfix visible-md visible-lg">
+				hola mundo!
+		</blanco>-->
+		<!--LOGO Y MENU-->
+		<menuw id="menuw" class="col-xs-12">
+			<nav class="navbar navbar-default" role="navigation">
+				<!--<div class="container-fluid">-->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-1">
+						<span class="sr-only"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<div class="hidden-lg">
+						<a class="navbar-brand" href="https://www.usac.edu.gt/misionvision.php#principal" style="vertical-align: top;" title="Ir a la p�gina de inicio"><img src="./index_files/logo.jpg" alt="Logo de la USAC" height="250%;"></a>	
+					</div>
+				</div>
+				<br>
+				<div class="collapse navbar-collapse" id="navbar-1">
+					<!--<div class="visible-lg-block" style="margin-left: 10%;">
+									<a class="navbar-brand" href="index.php" style="vertical-align: top;"><img src="img/logo_usac2018.svg" alt="Logo USAC" height="250%;"></a>	
+					</div>-->
+					<ul class="nav navbar-nav">
+						<logo class="col-lg-2 visible-lg-block">
+							<a href="https://www.usac.edu.gt/index.php" title="Ir a la p�gina de inicio"><img src="./index_files/logo.jpg" alt="Logo de la USAC"></a>
+						</logo><br>
+						<li><a href="file:///C:/Users/rodol/Documents/U/SS2021/IPC1/Lab/Proyectos/Proyecto2/Frontend/Login.html" title="Ir a la p�gina de inicio" target="_self">Inicio</a></li>
+                        <li><a href="file:///C:/Users/rodol/Documents/U/SS2021/IPC1/Lab/Proyectos/Proyecto2/Frontend/crearuser.html" title="Ir a la p�gina de inicio" target="_self">Crear usuario</a></li></ul>
+				</div>
+			</nav>
+		</menuw>
+	</div><script type="text/javascript">
+	$(document).ready(function() {
+    var heights = $(".amarillo").map(function() {
+        return $(this).height();
+    }).get(),
+ 
+    maxHeight = Math.max.apply(null, heights);
+ 
+    $(".amarillo2").height(maxHeight);
+});
+</script>
+		<div class="main row">
+			<amarillo class="col-xs-0 col-sm-1 col-md-2 col-lg-2 amarillo2" style="height: 69px;">
+			</amarillo>
+			<amarillo class="col-xs-12 col-sm-10 col-md-8 col-lg-8 amarillo">
+				<br><span class="glyphicon glyphicon-bookmark gi-2x" style="color: white;"></span>   <span style="color: #FFFFFF; font-size: 2.8vh; margin-left: 3vh;">Misión y Visión </span><br><br>
+			</amarillo>
+			<amarillo class="col-xs-0 col-sm-1 col-md-2 col-lg-2 amarillo2" style="height: 69px;">
+			</amarillo>
+		</div>
+		<!-- Misi&oacute;n y Visi&oacute;n -->
+		<div class="main row">
+			<blanco class="col-xs-12 col-sm-5 col-md-4 col-lg-4 col-sm-offset-1 col-md-offset-2">
+				<img src="./index_files/mision_001.png" class="image-responsive center-block visible-xs visible-sm visible-md visible-lg" width="50%">
+				<div align="justify" style="margin-left: 2em; margin-right: 2em;">
+					<p></p><div class="fontcelesteb" style="font-size: 2em;" align="center">Misión</div><p></p>
+    	        	<span style="font-size: 1.2em"><p>Ser líderes en blog de entretenimiento y estilo página web, ofreciendo 
+						temas de índole educativo y atendiendo las necesidades de los diferentes 
+						usuarios de manera eficaz e interactiva para potenciar el entretenimiento significativo.
+    	        	</p>
+    	        	<p></p>
+				</span>
+				</div>
+			</blanco>
+			<blanco class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
+				<br>
+				<img src="./index_files/vision_001.png" class="image-responsive center-block visible-xs visible-sm visible-md visible-lg" alt="Im?gen de visi?" width="50%"><br><br>
+				<div align="justify" style="margin-left: 2em; margin-right: 2em;">
+                	<p></p><div class="fontcelesteb" style="font-size: 2em;" align="center">Visión</div><p></p>
+                	<p><span style="font-size: 1.2em">Ofrecer un espacio innovador para el estudio, análisis e 
+						investigación de temas de carácter educativo, excediendo las expectativas de 
+						los usuarios de la red de habla hispana en cuanto al enfoque actual e innovador 
+						de los temas tratados.
+                	</span></p>
+				</div>
+			</blanco>
+      		<blanco class="col-xs-0 col-sm-1 col-md-2 col-lg-2">
+			</blanco>
+		</div><br>
+		<!-- Valores -->
+		<div class="main row" style="background-color: #F2F2F2;">
+			<gris3 class="col-xs-0 col-sm-0 col-md-0 col-lg-1">
+			</gris3>
+			<gris class="col-xs-12 col-sm-4 col-md-4 col-lg-3"><br>
+				<img src="./index_files/valores_001.png" class="image-responsive center-block visible-xs visible-sm visible-md visible-lg" alt="Im?gen de visi?" width="50%">
+				<div align="justify" style="margin-left: 2em; margin-right: 2em;">
+                	<p></p><div class="fontcelesteb" style="font-size: 2em;" align="center">Acerda de</div><p></p>
+                	<span style="font-size: 1.2em"><p>Blogger es un servicio creado por Rodolfo Cermeño, que permite crear y publicar una bitácora en línea. Para publicar contenidos, el usuario no tiene que escribir ningún código o instalar programas de servidor o de scripting.
+					</p>
+					</span>
+				</div>	
+			</gris>
+			<gris class="col-xs-12 col-sm-4 col-md-4 col-lg-3"><br><br><br><br><br><br><br><br><br>
+				<img src="./index_files/responsabilidad_001.png" class="image-responsive center-block visible-xs visible-sm visible-md visible-lg" alt="Im?gen de visi?" width="25%">
+				<div align="justify" style="margin-left: 2em; margin-right: 2em;">
+                	<p></p><div class="fontcelesteb" style="font-size: 1.3em;" align="center">Contacto</div><p></p><br>
+                	<span style="font-size: 1.2em"><p>Correo: rodolfois1@gmail.com</p>
+					<p> 2660934260101@ingenieria.usac.edu.gt</p>
+					<p> Direccion Ciudad de Guatemala</p>
+					<p> Tel.: +502-12345678 </p></span>
+				</div>	
+			</gris>
+			<gris class="col-xs-12 col-sm-4 col-md-4 col-lg-3"><br><br><br><br><br><br><br><br><br>
+				<img src="./index_files/respeto_001.png" class="image-responsive center-block visible-xs visible-sm visible-md visible-lg" alt="Im?gen de visi?" width="25%">
+				<div align="justify" style="margin-left: 2em; margin-right: 2em;">
+                	<p></p><div class="fontcelesteb" style="font-size: 1.3em;" align="center">Acerda de Mi</div><p></p><br>
+                	<p><span style="font-size: 1.2em">
+						</span></p><p>Mi nombre Rodolfo Ismael Cermeño Andr+es</p>
+						<p>actualemente estoy Cursando Introducción a la Programación y Computación 1</p><br>
+						<p>en el Segundo semestre del año 2021/p&gt;<br>
+                	</p>
+				</div>	
+			</gris>
+			<gris3 class="col-xs-0 col-sm-0 col-md-0 col-lg-2">
+			</gris3>
+		</div>
+		<style type="text/css">
+.jos9{
+	text-align: center;
+}
+
+.jos10{
+	text-align: left;
+}
+</style>
+		
+
+
+	
+	<script type="text/javascript" src="./index_files/wowslider.js.descarga"></script>
+    <script type="text/javascript" src="./index_files/script.js.descarga"></script>
+	<script type="text/javascript" src="./index_files/jquery.min.js.descarga"></script>
+	<script src="./index_files/jquery-3.3.1.js.descarga"></script>
+	<script src="./index_files/bootstrap.js.descarga"></script>
+
+
+
+
+<editor-card style="position:absolute;top:0px;left:0px;z-index:auto;display: block !important">
+	<div dir="ltr" style="all: initial;">
+		<div style="color: initial; font: initial; font-feature-settings: initial; font-kerning: initial; font-optical-sizing: initial; font-variation-settings: initial; forced-color-adjust: initial; text-orientation: initial; text-rendering: initial; -webkit-font-smoothing: initial; -webkit-locale: initial; -webkit-text-orientation: initial; -webkit-writing-mode: initial; writing-mode: initial; zoom: initial; accent-color: initial; place-content: initial; place-items: initial; place-self: initial; alignment-baseline: initial; animation: initial; app-region: initial; appearance: initial; aspect-ratio: initial; backdrop-filter: initial; backface-visibility: initial; background: initial; background-blend-mode: initial; baseline-shift: initial; block-size: initial; border-block: initial; border: initial; border-radius: initial; border-collapse: initial; border-end-end-radius: initial; border-end-start-radius: initial; border-inline: initial; border-start-end-radius: initial; border-start-start-radius: initial; inset: initial; box-shadow: initial; box-sizing: initial; break-after: initial; break-before: initial; break-inside: initial; buffered-rendering: initial; caption-side: initial; caret-color: initial; clear: initial; clip: initial; clip-path: initial; clip-rule: initial; color-interpolation: initial; color-interpolation-filters: initial; color-rendering: initial; color-scheme: initial; columns: initial; column-fill: initial; gap: initial; column-rule: initial; column-span: initial; contain: initial; contain-intrinsic-block-size: initial; contain-intrinsic-size: initial; contain-intrinsic-inline-size: initial; content: initial; content-visibility: initial; counter-increment: initial; counter-reset: initial; counter-set: initial; cursor: initial; cx: initial; cy: initial; d: initial; display: initial; dominant-baseline: initial; empty-cells: initial; fill: initial; fill-opacity: initial; fill-rule: initial; filter: initial; flex: initial; flex-flow: initial; float: initial; flood-color: initial; flood-opacity: initial; grid: initial; grid-area: initial; height: initial; hyphens: initial; image-orientation: initial; image-rendering: initial; inline-size: initial; inset-block: initial; inset-inline: initial; isolation: initial; letter-spacing: initial; lighting-color: initial; line-break: initial; list-style: initial; margin-block: initial; margin: initial; margin-inline: initial; marker: initial; mask: initial; mask-type: initial; max-block-size: initial; max-height: initial; max-inline-size: initial; max-width: initial; min-block-size: initial; min-height: initial; min-inline-size: initial; min-width: initial; mix-blend-mode: initial; object-fit: initial; object-position: initial; offset: initial; opacity: initial; order: initial; origin-trial-test-property: initial; orphans: initial; outline: initial; outline-offset: initial; overflow-anchor: initial; overflow-clip-margin: initial; overflow-wrap: initial; overflow: initial; overscroll-behavior-block: initial; overscroll-behavior-inline: initial; overscroll-behavior: initial; padding-block: initial; padding: initial; padding-inline: initial; page: initial; page-orientation: initial; paint-order: initial; perspective: initial; perspective-origin: initial; pointer-events: initial; position: absolute; quotes: initial; r: initial; resize: initial; ruby-position: initial; rx: initial; ry: initial; scroll-behavior: initial; scroll-margin-block: initial; scroll-margin: initial; scroll-margin-inline: initial; scroll-padding-block: initial; scroll-padding: initial; scroll-padding-inline: initial; scroll-snap-align: initial; scroll-snap-stop: initial; scroll-snap-type: initial; scrollbar-gutter: initial; shape-image-threshold: initial; shape-margin: initial; shape-outside: initial; shape-rendering: initial; size: initial; speak: initial; stop-color: initial; stop-opacity: initial; stroke: initial; stroke-dasharray: initial; stroke-dashoffset: initial; stroke-linecap: initial; stroke-linejoin: initial; stroke-miterlimit: initial; stroke-opacity: initial; stroke-width: initial; tab-size: initial; table-layout: initial; text-align: initial; text-align-last: initial; text-anchor: initial; text-combine-upright: initial; text-decoration: initial; text-decoration-skip-ink: initial; text-indent: initial; text-overflow: initial; text-shadow: initial; text-size-adjust: initial; text-transform: initial; text-underline-offset: initial; text-underline-position: initial; touch-action: initial; transform: initial; transform-box: initial; transform-origin: initial; transform-style: initial; transition: initial; user-select: initial; vector-effect: initial; vertical-align: initial; visibility: initial; border-spacing: initial; -webkit-border-image: initial; -webkit-box-align: initial; -webkit-box-decoration-break: initial; -webkit-box-direction: initial; -webkit-box-flex: initial; -webkit-box-ordinal-group: initial; -webkit-box-orient: initial; -webkit-box-pack: initial; -webkit-box-reflect: initial; -webkit-highlight: initial; -webkit-hyphenate-character: initial; -webkit-line-break: initial; -webkit-line-clamp: initial; -webkit-mask-box-image: initial; -webkit-mask: initial; -webkit-mask-composite: initial; -webkit-perspective-origin-x: initial; -webkit-perspective-origin-y: initial; -webkit-print-color-adjust: initial; -webkit-rtl-ordering: initial; -webkit-ruby-position: initial; -webkit-tap-highlight-color: initial; -webkit-text-combine: initial; -webkit-text-decorations-in-effect: initial; -webkit-text-emphasis: initial; -webkit-text-emphasis-position: initial; -webkit-text-fill-color: initial; -webkit-text-security: initial; -webkit-text-stroke: initial; -webkit-transform-origin-x: initial; -webkit-transform-origin-y: initial; -webkit-transform-origin-z: initial; -webkit-user-drag: initial; -webkit-user-modify: initial; white-space: initial; widows: initial; width: initial; will-change: initial; word-break: initial; word-spacing: initial; x: initial; y: initial; z-index: 2147483647;">
+			<link rel="stylesheet" href="chrome-extension://gpaiobkfhnonedkhhfjpmhdalgeoebfa/fonts/fabric-icons.css"><div style="all: initial;"></div></div></div></editor-card></div></body></html>
